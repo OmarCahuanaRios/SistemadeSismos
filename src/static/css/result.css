@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+}
+.containerLinks{
+    justify-content: end;
+}
+.divBotones{
+    display: flex;
+}
+.miniContainer{
+    padding: 10%;
+}
+.volver{
+    max-width: 300px;
+    position: absolute;
+    
+}

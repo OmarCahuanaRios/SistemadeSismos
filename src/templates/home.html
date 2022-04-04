@@ -4,13 +4,64 @@
 
 {% block customCSS%}
 
+<link rel="stylesheet" href="{{url_for('static',filename='css/home.css')}}">
 {% endblock %}
 
 {% block body %}
 
-<h1>Bienvenido {{current_user.fullname}}</h1>
-<a href="{{url_for('logout')}}" class="btn btn-secondary">Log Out</a>
+<main class="form-signin" >
+    <form  method="POST">
+      
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <br>
+      {% for message in messages %}
+      
+      {% endfor %}
+      {% endif %}
 
+      {% endwith %}
+      <h1 class="h3 mb-3 fw-normal titulo">ELEGIR MAPA DE CONSULTA</h1>
+      <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+  
+      
+      <div class="form-check formsito">
+          <div class="formsito2">
+            <input class="form-check-input" type="radio" name="Zona" id="flexRadioDefault1" value="GeneralMap">
+            <label class="form-check-label" for="Zona">
+              General
+            </label>
+
+          </div>
+          <div class="formsito2b">
+            <input class="form-check-input" type="radio" name="Zona" id="flexRadioDefault2" value="SpecificMap">
+            <label class="form-check-label" for="Zona">
+              Zona
+            </label>
+              
+          </div>
+         
+        </div>
+        
+        <div class="formsito3">
+            <label for="" class="labelZonaElegida"> Zona Elegida:</label>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>(seleccionar)</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+
+        </div>
+        
+  
+      
+      <button class="w-100 btn btn-lg btn-secondary" type="submit">Ingresar</button>
+      
+    </form>
+</main>
+
+    
 
 
 {% endblock %}

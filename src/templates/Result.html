@@ -1,0 +1,94 @@
+{% extends './base.html' %}
+
+{% block title %}Resultados{% endblock %}
+
+{% block customCSS%}
+
+<link rel="stylesheet" href="{{url_for('static',filename='css/result.css')}}">
+{% endblock %}
+
+{% block body %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar">
+    
+    
+  
+    <div class="collapse navbar-collapse containerLinks" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" >
+          <a class="nav-link" href="#">Cambiar vista 
+        </li>
+        <li class="nav-item" style="padding-bottom: 10px;">
+          <a class="nav-link" href="#">Planes de acción</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Ayuda</a>
+          </li>
+        
+        </li>
+        
+      </ul>
+      
+    </div>
+</nav>
+
+
+<form  method="POST" class="formsito2">
+    <div class="container">
+        <div class="form-check formsito miniContainer">
+            <h1 class="h3 mb-3 fw-normal titulo">Los daños corresponden:</h1>
+        <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+        <br>
+        <label for="">$valor</label>
+
+        <br>
+        <br>
+        <Label>Para un sismo de características:</Label>
+        <br>
+        <br>
+        <label for="">Magnitud:$valor</label>
+        <br>
+        <br>
+        <label for="">Epicentro:$valor</label>
+        <br>
+        <br>
+        <label for="">Lugar a evaluar:$valor</label>
+        </div>   
+
+        <div class="miniContainer">
+            <h1>Presupuesto: $valor</h1>
+            <br>
+            <label for="">Para un total de $valor afectados</label>
+            <br>
+            <br>
+            <label for="">$valor</label>
+            <br>
+            <label for="">personas de apoyo</label>
+            <br>
+            <br>
+            <label for="">$valor</label>
+            <br>
+            <label for="">Edificaciones dañadas</label>
+            <br>
+            <br>
+            <label for="">$valor</label>
+            <br>
+            <label for="">canastas de víveres</label>
+
+            <div class="divBotones">
+                <button class="w-100 btn btn-lg btn-secondary" type="submit">Ver detalle</button>
+               
+
+            </div>
+
+        </div>
+
+    </div>
+  </form>
+
+  <a href="/simulator"><button class="w-100 btn btn-lg btn-secondary volver" name="volver" value="volver" >Volver</button></a>
+
+    
+
+
+{% endblock %}
