@@ -5,3 +5,33 @@
     margin: auto;
     max-width: 700px;
 }
+
+.tabla{
+    border: 1px;
+    padding-top: 10%;
+}
+a{
+    color: white;
+    padding: 1em;
+  }
+  .navbar{
+    background-color: #8ea3a6;
+  }
+  a:hover{
+    background-color:white;
+    color: black;
+  }
+  
+  .topnav a{
+    float: left;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    padding: 1em;
+  }
+  h1{
+      color: #55392a;
+  }
+  h2{
+      color: #55392a;
+  }

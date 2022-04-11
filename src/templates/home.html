@@ -21,7 +21,7 @@
       {% endif %}
 
       {% endwith %}
-      <h1 class="h3 mb-3 fw-normal titulo">ELEGIR MAPA DE CONSULTA</h1>
+      <h1 class="h3 mb-3 fw-normal titulo"><strong>ELEGIR MAPA DE CONSULTA</strong></h1>
       <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
   
       
@@ -45,7 +45,7 @@
         
         <div class="formsito3">
             <label for="" class="labelZonaElegida"> Zona Elegida:</label>
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select seleccionable" aria-label="Default select example">
                 <option selected>(seleccionar)</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
@@ -56,7 +56,7 @@
         
   
       
-      <button class="w-100 btn btn-lg btn-secondary" type="submit">Ingresar</button>
+      <button class="w-100 btn btn-lg btn-secondary boton" type="submit">Ingresar</button>
       
     </form>
 </main>

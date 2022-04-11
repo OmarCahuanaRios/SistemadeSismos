@@ -1,14 +1,33 @@
-.containerLinks{
-    justify-content: end;
-    
-    
-}
-a:hover{
-    background-color:gray;
-}
+
+
 .spacer{
     width: 100px;
 }
 .body{
     background-color: black;
+}
+
+.navbar{
+    background-color: #8ea3a6;
+}
+a:hover{
+    background-color:white;
+    color: black;
+}
+.btnSimular{
+    margin-left: 5%;
+}
+.topnav a{
+    float: left;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    padding: 1em;
+}
+
+.btnSimular{
+    margin-left: 40%;
+}
+.formsito2{
+    background-color: red;
 }

@@ -41,6 +41,7 @@ body {
 .formsito{
     
     display: flex;
+    padding-left: 23%;
 }
 .formsito2{
     padding-left: 10%;
@@ -57,11 +58,19 @@ body {
 .titulo{
     text-align: center;
 }
-.form-select{
-    max-width: 200px;
-}
+
 .labelZonaElegida{
-    padding-left: 20%;
-    padding-right: 5%;
+    padding-left: 5%;
+    padding-right: 15%;
     padding-top: 1%;
+}
+h1{
+  color: #55392a;
+}
+.boton{
+  max-width: 300px;
+  margin-left: 20%;
+}
+.seleccionable{
+  max-width: 250px;
 }

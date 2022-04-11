@@ -11,7 +11,43 @@
     padding: 10%;
 }
 .volver{
-    max-width: 300px;
+    max-width: 241.94px;
     position: absolute;
+    margin-left: 994px;
+    margin-bottom: 100px;
+    
     
 }
+.formsito2{
+    
+    height:500px;
+}
+a{
+    color: white;
+    padding: 1em;
+  }
+  .navbar{
+    background-color: #8ea3a6;
+  }
+  a:hover{
+    background-color:white;
+    color: black;
+  }
+  
+  .topnav a{
+    float: left;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    padding: 1em;
+  }
+  #idcontainer2{
+      background-color: #efd3bb;
+
+  }
+  .valor{
+      text-align: center;
+  }
+  .label1{
+      font-size: 1em;
+  }

@@ -9,33 +9,29 @@
 
 {% block body %}
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light navbar">
-    
+<nav class="navbar">
+  <form class="form-inline my-2 my-lg-0" method="POST">
+    <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+      
+    </form>
+  
+
+    <div class="topnav">
+      
+      <a href="#news">Cambiar de vista</a>
+      <a href="#contact">Planes de acción</a>
+      <a href="#about">Ayuda</a>
+    </div>
+   
     
   
-    <div class="collapse navbar-collapse containerLinks" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item" >
-          <a class="nav-link" href="#">Cambiar vista 
-        </li>
-        <li class="nav-item" >
-          <a class="nav-link" href="#">Planes de acción</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Ayuda</a>
-          </li>
-        
-        </li>
-        
-      </ul>
-      
-    </div>
 </nav>
 
 
 <form  method="POST" class="formsito2">
     <div class="container">
-        <h1>$valor Resumen del plan</h1>
+      
+        <h1><img class="mb-4" src="{{url_for('static',filename='img/disco.png')}}" alt="" width="50" height="50" ><strong>$valor Resumen del plan</strong></h1>
     <p>	El presente documento corresponde al plan de acción en caso de un sismo de $valor grados en el distrito
         de $valor. Se explicará la cantidad de afectados por grupo de edad, el personal de apoyo requerido para socorrer
         a las personas y la cantidad de edificaciones afectadas durante el movimiento telúrico. Finalmente,el presupuesto
@@ -49,7 +45,7 @@
 
     <div class="container">
         <h2>Detalle de la cantidad de afectados:</h2>
-      <table>
+      <table class="tabla" >
           <tr>Niños  $valor</tr>
           <br>
           <tr>Adolescentes $valor</tr>
@@ -67,7 +63,7 @@
 
       <div class="container">
         <h2>Detalle de la cantidad de personal de apoyo:</h2>
-        <table>
+        <table class="tabla">
             <tr>Bomberos $valor</tr>
         </table>
 
