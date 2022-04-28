@@ -31,3 +31,13 @@ a:hover{
 .formsito2{
     background-color: red;
 }
+
+#map {
+    height: 100%;
+    width: 1000px;
+  }
+  
+  /* 
+   * Optional: Makes the sample page fill the window. 
+   */
+ 
