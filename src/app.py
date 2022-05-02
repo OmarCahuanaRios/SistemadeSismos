@@ -87,6 +87,14 @@ def Simulator():
        return redirect(url_for('resultados'))
     return render_template('simulator.html')
 
+@app.route('/listaplanes',methods=['GET','POST'])
+def ListaPlanes():
+    return render_template('ListaPlanes.html')
+
+@app.route('/estadofuente',methods=['GET','POST'])
+def EstadoFuente():
+    return render_template('EstadoFuente.html')
+
 
 @app.route('/result',methods=['GET','POST'])
 def resultados():
@@ -99,7 +107,6 @@ def resultados():
 @app.route('/summary',methods=['GET','POST'])
 def summary():
     return render_template("Summary.html")
-
 
 
 

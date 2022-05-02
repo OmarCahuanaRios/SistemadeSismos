@@ -1,0 +1,35 @@
+{% extends './base.html' %}
+
+{% block title %}General Map{% endblock %}
+
+{% block customCSS%}
+
+<link rel="stylesheet" href="{{url_for('static',filename='css/generalMap.css')}}">
+{% endblock %}
+
+{% block body %}
+
+<nav class="navbar">
+    <form class="form-inline my-2 my-lg-0" method="POST">
+      <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+        <button class="btn btn-light btnSimular" type="submit">SIMULAR</button>
+      </form>
+    
+  
+      <div class="topnav">
+        
+        <a href="{{url_for('home')}}">Cambiar de vista</a>
+        <a href="/listaplanes">Planes de acción</a>
+        <a href="/estadofuente">Ayuda</a>
+      </div>
+     
+      
+    
+</nav>
+
+<div>
+    ESTADO FUENTE 
+</div>
+
+
+{% endblock %}
