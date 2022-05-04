@@ -18,9 +18,9 @@
 
     <div class="topnav">
       
-      <a href="{{url_for('home')}}">Cambiar de vista</a>
-      <a href="/ListaPlanes">Planes de acción</a>
-      <a href="/EstadoFuente">Ayuda</a>
+      <a href="{{url_for('home')}}" class="aNav">Cambiar de vista</a>
+      <a href="/listplanes" class="aNav">Planes de acción</a>
+      <a href="/estadofuente"class="aNav">Ayuda</a>
     </div>
    
     
@@ -101,6 +101,8 @@
        
   
     <button class="w-100 btn btn-lg btn-secondary boton" type="submit">Simular</button>
+    <button class="w-100 btn btn-lg btn-secondary botonVolver" type=""><a href="/GeneralMap" class="aVolver">Volver</a></button>
+    
     
 </form>
 

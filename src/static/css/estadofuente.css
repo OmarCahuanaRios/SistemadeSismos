@@ -1,0 +1,49 @@
+h1{
+    color: #55392a;
+    padding: 3%;
+
+    
+}
+.titulo{
+    font-size: 2.5em;
+}
+.navbar{
+    background-color: #8ea3a6;
+}
+  
+.a:hover{
+    background-color:white;
+    color: black;
+}
+  
+.topnav a{
+    float: left;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    padding: 1em;
+}
+  
+.btnSimular{
+    margin-left: 45%;
+}
+  
+.tabla{
+    border: 1px solid black;
+    margin: auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+  
+  
+.header{
+      width: 150px;
+      text-align: center;
+}
+
+.encabezado{
+      background-color: aquamarine;
+}
+  

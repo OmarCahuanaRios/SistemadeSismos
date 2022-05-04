@@ -4,7 +4,7 @@
 
 {% block customCSS%}
 
-<link rel="stylesheet" href="{{url_for('static',filename='css/generalMap.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='css/estadofuente.css')}}">
 {% endblock %}
 
 {% block body %}
@@ -27,8 +27,48 @@
     
 </nav>
 
-<div>
-    ESTADO FUENTE 
+<div class="contenedor">
+  <h1 class="h3 mb-3 fw-normal titulo"><strong>Estado de las fuentes</strong></h1>
+
+  <table class="tabla">
+    <tr class="tabla">
+      <th class="tabla header encabezado"> Origen </th>
+      <th class="tabla header encabezado"> Nombre </th>
+      <th class="tabla header encabezado"> Tipo </th>
+      <th class="tabla header encabezado"> Fecha Actualización </th>
+      <th class="tabla header encabezado"> Descargar </th>
+    </tr>
+    <tr class="tabla">
+      <td class="tabla header">IGP</td>
+      <td class="tabla header">datos_sismos</td>
+      <td class="tabla header">csv</td>
+      <td class="tabla header">16/04/2022 20:31</td>
+      <td class="tabla header"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+      </svg></td>
+    </tr>
+    <tr class="tabla">
+      <td class="tabla header">INEI</td>
+      <td class="tabla header">poblacion_lm</td>
+      <td class="tabla header">xlsx</td>
+      <td class="tabla header">09/04/2022 16:31</td>
+      <td class="tabla header"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+      </svg></td>
+    </tr>
+    <tr class="tabla ">
+      <td class="tabla header">MVCS</td>
+      <td class="tabla header">viviendas_lm</td>
+      <td class="tabla header">xlsx</td>
+      <td class="tabla header">01/04/2022 15:51</td>
+      <td class="tabla header"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+      </svg></td>
+    </tr>
+  </table>  
 </div>
 
 
