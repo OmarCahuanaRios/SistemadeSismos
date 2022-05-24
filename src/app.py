@@ -58,22 +58,30 @@ def logout():
 @app.route('/home',methods=['GET','POST'])       
 def home():
     if request.method=='POST':
-    
         selectedValue=request.form['Zona']
-        return redirect(url_for('GeneralMap',selectedValue=selectedValue))
+        distrito=request.form.get('distrito')
+        if selectedValue=='GeneralMap':
+            return redirect(url_for('GeneralMap',valor=selectedValue))
+        if selectedValue=='SpecificMap':
+            return redirect(url_for('GeneralMap',valor=distrito))
+    
+        
 
     return render_template('home.html')     
 
 
-@app.route('/<selectedValue>',methods=['GET','POST'])
-def GeneralMap(selectedValue):
+@app.route('/<valor>',methods=['GET','POST'])
+def GeneralMap(valor):
     if request.method=='POST':
         return redirect(url_for('Simulator'))
-    if selectedValue=='GeneralMap':
+    if valor=='GeneralMap':
         return render_template('GeneralMap.html')
-    if selectedValue=='SpecificMap':
-        return render_template('SpecificMap.html')
+    else:
+       return render_template('SpecificMap.html',distrito=valor)
 
+
+
+    
 
 @app.route('/estadisticas',methods=['GET','POST'])
 def estadisticas():

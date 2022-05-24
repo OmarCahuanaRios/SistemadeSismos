@@ -1,10 +1,263 @@
-<iframe
-  width="600"
-  height="450"
-  style="border:0"
-  loading="lazy"
-  allowfullscreen
-  referrerpolicy="no-referrer-when-downgrade"
-  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCiO5VDtHx-xSlgcX5-Yk6He40N9DadXYc
-    &q=Space+Needle,Seattle+WA">
-</iframe>
+{% extends './base.html' %}
+
+{% block title %}General Map{% endblock %}
+
+{% block customCSS%}
+
+<link rel="stylesheet" href="{{url_for('static',filename='css/generalMap.css')}}">
+{% endblock %}
+
+{% block body %}
+
+<nav class="navbar">
+    <form class="form-inline my-2 my-lg-0" method="POST">
+      <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+        <button class="btn btn-light btnSimular" type="submit">SIMULAR</button>
+      </form>
+    
+  
+      <div class="topnav">
+        
+        <a href="{{url_for('home')}}">Cambiar de vista</a>
+        <a href="/listaplanes">Planes de acción</a>
+       <a href="/estadofuente">Ayuda</a>
+      </div>
+     
+      
+    
+</nav>
+
+<div id="map" style="width: 1000px;">
+
+</div>
+
+  {% if distrito=="ancon" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13139.591961756663!2d-77.1491036624973!3d-11.735146631959548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d5451df56977%3A0xc8b24208cd77794!2zQW5jw7Nu!5e0!3m2!1ses-419!2spe!4v1653353553688!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+  {% if distrito=="ate_vitarte" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62433.084090377844!2d-76.9250295971208!3d-12.038856422658167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c3d12afa9c23%3A0x8a9da7f852624412!2sAte!5e0!3m2!1ses-419!2spe!4v1653353672454!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="barranco" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15602.117153827377!2d-77.02976661371464!3d-12.144325584890812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b7e419464ab1%3A0xb5be6f6138a6919!2sBarranco!5e0!3m2!1ses-419!2spe!4v1653354009338!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="breña" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15607.064389727962!2d-77.06017776373024!3d-12.059608129141095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8d7471df8e5%3A0x885c053043506a22!2zQnJlw7Fh!5e0!3m2!1ses-419!2spe!4v1653354040827!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+  
+  {% if distrito=="carabayllo" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124978.43593563852!2d-77.01901590271935!3d-11.7948667920169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d8ec468cbc29%3A0xf0acc152a0516ba5!2sCarabayllo!5e0!3m2!1ses-419!2spe!4v1653354068082!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="chaclacayo" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62444.67851111837!2d-76.80234820863247!3d-11.988861515597687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105e8e4c48da22f%3A0x19c6c377ff55e751!2sChaclacayo!5e0!3m2!1ses-419!2spe!4v1653354168331!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="chorrillos" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62397.11562569205!2d-77.04142660802395!3d-12.1926665448224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b9deeb34c327%3A0x4f7929b6bba87e8e!2sChorrillos!5e0!3m2!1ses-419!2spe!4v1653354183163!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="cieneguilla" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124851.7078194369!2d-76.83494484941266!3d-12.069929524474903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105eba7984d5d7d%3A0xe61cd4615145ead8!2sCieneguilla!5e0!3m2!1ses-419!2spe!4v1653354204141!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="comas" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62457.704516376696!2d-77.06618190879962!3d-11.932447457715396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d06992e815e3%3A0x18573d7c2751ddb!2sComas!5e0!3m2!1ses-419!2spe!4v1653354221981!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="el_agustino" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62457.704516376696!2d-77.06618190879962!3d-11.932447457715396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c676e6cef7e3%3A0x5e83b54b9576d7ec!2sEl%20Agustino!5e0!3m2!1ses-419!2spe!4v1653354273238!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+  {% if distrito=="independencia" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31222.309190331052!2d-77.06623279464324!3d-11.98912132680159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cfaeef4c292f%3A0xee8dfbf42a8ee7da!2sIndependencia!5e0!3m2!1ses-419!2spe!4v1653354294877!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+  {% if distrito=="jesus_maria" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15605.955534586647!2d-77.05847166372669!3d-12.078647280429168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8e3646ab8d7%3A0x848660d2fc40ce50!2zSmVzw7pzIE1hcsOtYQ!5e0!3m2!1ses-419!2spe!4v1653354309971!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="la_molina" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31210.60277022537!2d-76.94735464456878!3d-12.089865238246523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c72728f1e9c3%3A0xe561ad9645daa02c!2sLa%20Molina!5e0!3m2!1ses-419!2spe!4v1653354332419!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="la_victoria" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15606.218417484379!2d-77.02462911372751!3d-12.074136230123761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8991e614d33%3A0x29fc509365d6b1d2!2sLa%20Victoria!5e0!3m2!1ses-419!2spe!4v1653354453916!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+  
+  {% if distrito=="lima" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31214.640900554325!2d-77.06273229459437!3d-12.055207334293833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8db1e539667%3A0x4f45538aa07bda29!2sCercado%20de%20Lima!5e0!3m2!1ses-419!2spe!4v1653354479468!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="lince" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7802.783899235335!2d-77.04005812348386!3d-12.085297774693698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c88c1907bf77%3A0x190962f6e2177564!2sLince!5e0!3m2!1ses-419!2spe!4v1653354499445!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="los_olivos" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62450.24862268723!2d-77.1089767587039!3d-11.964770112220606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105ce21b6748c45%3A0xece5fa25a5e8c4d5!2sLos%20Olivos!5e0!3m2!1ses-419!2spe!4v1653354525905!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="lurigancho" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124906.81644934996!2d-76.88711735084767!3d-11.95108318148132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105e813f67f0a1d%3A0x513d3adfaf686a4b!2sLurigancho-Chosica!5e0!3m2!1ses-419!2spe!4v1653354565215!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="lurin" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124774.85548849421!2d-76.86647119741848!3d-12.233768716247457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91059642255d87e5%3A0x75c5b93fe8ad1eb6!2zTHVyw61u!5e0!3m2!1ses-419!2spe!4v1653354581079!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="magdalena_del_mar" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15604.992481942107!2d-77.0756703137237!3d-12.095159031548153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c9a0b6bdb31d%3A0xee688db657b9e102!2sMagdalena%20del%20Mar!5e0!3m2!1ses-419!2spe!4v1653354737340!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+  {% if distrito=="miraflores" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15603.453730409432!2d-77.03753816371879!3d-12.12149528333669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8199ea33425%3A0xbfe3626e9c3a156a!2sMiraflores!5e0!3m2!1ses-419!2spe!4v1653354770031!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+  {% if distrito=="pachacamac" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124814.14510790678!2d-76.86097594843697!3d-12.150280220232492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91059518fa348973%3A0x2e168af14ba80f2d!2sPachacamac!5e0!3m2!1ses-419!2spe!4v1653354788569!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="pucusana" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62330.1635725119!2d-76.81216790717268!3d-12.473995987091643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91059e2c41dacf2f%3A0x58559ce23b4913!2sPucusana!5e0!3m2!1ses-419!2spe!4v1653354807995!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="pueblo_libre" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15606.076109499125!2d-77.0743252137271!3d-12.076578430289084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c91c0f19df11%3A0x6a332a1c8a99047b!2sPueblo%20Libre!5e0!3m2!1ses-419!2spe!4v1653354878847!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+  
+  {% if distrito=="puente_piedra" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62470.9711503249!2d-77.12628150897014!3d-11.874719799742516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d1464cfdafd1%3A0x8d0a038a4e5435bc!2sPuente%20Piedra!5e0!3m2!1ses-419!2spe!4v1653354898614!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="punta_hermosa" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124760.95852212333!2d-76.81565589705878!3d-12.263165064947037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105973ab9a1fec7%3A0x710b1ce595a3d866!2sPunta%20Hermosa!5e0!3m2!1ses-419!2spe!4v1653354916866!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="punta_negra" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124743.25504092386!2d-76.78959789660091!3d-12.300513163372033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910598c18e67f633%3A0xdf82634e6fa234fd!2sPunta%20Negra!5e0!3m2!1ses-419!2spe!4v1653354947351!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="rimac" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31218.605276590635!2d-77.05021364461957!3d-12.021086680418199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cf41e6ed1dad%3A0xb30871711a844983!2zUsOtbWFj!5e0!3m2!1ses-419!2spe!4v1653354972126!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="san_bartolo" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62354.847948087096!2d-76.76374360748584!3d-12.37100642135807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91059bef28fe5b3f%3A0xc496bd49799cff1e!2sSan%20Bartolo!5e0!3m2!1ses-419!2spe!4v1653355012806!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="san_borja" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15604.935148163227!2d-77.0039430137235!3d-12.096141331614804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c7d19478c6bf%3A0xb53809bf8f8b06c8!2sSan%20Borja!5e0!3m2!1ses-419!2spe!4v1653355031085!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+  {% if distrito=="san_isidro" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15604.82059527803!2d-77.04296306372312!3d-12.098103731747928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c842bd2342fb%3A0x7e3183f45f461207!2sSan%20Isidro!5e0!3m2!1ses-419!2spe!4v1653355047740!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+  {% if distrito=="san_juan_de_lurigancho" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62447.65656519827!2d-77.02805450867064!3d-11.975987013790926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c56a978fd8bf%3A0x3d67f37d51e1d7c0!2sSan%20Juan%20de%20Lurigancho!5e0!3m2!1ses-419!2spe!4v1653355084497!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="san_juan_de_miraflores" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62405.768178737446!2d-76.99457785813442!3d-12.15584118945498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b8f71b53ab49%3A0xdd8cbd3088d235f0!2sSan%20Juan%20de%20Miraflores!5e0!3m2!1ses-419!2spe!4v1653355108956!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="san_luis" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15606.241379194411!2d-77.00752261372756!3d-12.073742130097079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c62350e6f59f%3A0xc3ea3178b4938207!2sSan%20Luis!5e0!3m2!1ses-419!2spe!4v1653355172267!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+  
+  {% if distrito=="san_martin_de_porres" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15606.241379194411!2d-77.00752261372756!3d-12.073742130097079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105ce6e64e51b9b%3A0x6a172d7ee033e802!2sSan%20Mart%C3%ADn%20de%20Porres!5e0!3m2!1ses-419!2spe!4v1653355196186!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="san_miguel" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15605.948525655256!2d-77.10029481372673!3d-12.07876753043731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c964223bb347%3A0x2013e50c7a7d23d4!2sSan%20Miguel!5e0!3m2!1ses-419!2spe!4v1653355219536!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="santa_anita" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15608.035060413256!2d-76.97200926373331!3d-12.042917278013842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c68077e654bd%3A0x6e675be6cf829d41!2sSanta%20Anita!5e0!3m2!1ses-419!2spe!4v1653355248986!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="santa_maria_del_mar" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31172.238314269773!2d-76.78543639432633!3d-12.414380676041034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91059ee865d50fe1%3A0x99f5560c6d29b9d4!2sSanta%20Mar%C3%ADa%20del%20Mar!5e0!3m2!1ses-419!2spe!4v1653355275101!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="santa_rosa" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31243.42742966194!2d-77.18189734477785!3d-11.80523840626366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d5401f5ac98f%3A0x14e6d6350ee72a49!2sSanta%20Rosa!5e0!3m2!1ses-419!2spe!4v1653355330867!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="santiago_de_surco" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62413.053249304496!2d-77.01792120822748!3d-12.124750434953233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b875394f9e21%3A0x2fc1431693d2759!2sSantiago%20de%20Surco!5e0!3m2!1ses-419!2spe!4v1653355346636!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+  {% if distrito=="surquillo" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15603.877027584498!2d-77.0194014137202!3d-12.114256032844615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c80ba9872641%3A0x5d9ba7056ed35c09!2sSurquillo!5e0!3m2!1ses-419!2spe!4v1653355362383!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="villa_el_salvador" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31195.6367988041!2d-76.96089399447396!3d-12.21746845293877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105bbdfbb504f6f%3A0x659e4e0dde2d7992!2sVilla%20el%20Salvador!5e0!3m2!1ses-419!2spe!4v1653355390330!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+  {% if distrito=="villa_maria_del_triunfo" %}
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62401.46113115521!2d-76.95869030807941!3d-12.17418574212398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b92b9e02c189%3A0x4e31ea20f4c5e783!2sVilla%20Mar%C3%ADa%20del%20Triunfo!5e0!3m2!1ses-419!2spe!4v1653355468924!5m2!1ses-419!2spe" width="1920px" height="1000px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  {% endif %}
+
+
+
+
+
+
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBztMi1hDY6GLIW9waOsAWvHfTtdpnyUtk&callback=initMap">
+    defer
+
+    let map;
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 8,
+  });
+}
+
+window.initMap = initMap;
+</script>
+    
+
+
+{% endblock %}
